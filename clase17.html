@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>numero aleatorio</title>
+</head>
+<body>
+    <script>
+        var aleatorio =Math.round(Math.random()*100);
+        /*alert(aleatorio);*/
+        var minum, intentos;
+        minum =0;
+        intentos = 0;
+
+        do{
+            minum = prompt("Introduce un N° entre 1 y 100");
+            if(aleatorio>minum){
+                alert("Mas alto!")
+            }
+            if(aleatorio<minum){
+                alert("Mas abajo!")
+            }
+
+        }while(aleatorio!=minum)
+
+        alert("Correcto!");
+        alert("el numero aleatorio generado fue: " + aleatorio);
+
+        
+    </script>    
+</body>
+</html>
