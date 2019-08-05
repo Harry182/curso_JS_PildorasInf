@@ -42,10 +42,16 @@ table{
         cifra=document.getElementById("display").value; 
     }
     function suma(){
+        if(restar){
+          acumulado-=parseInt(cifra);
+          document.getElementById("display").value=acumulado;
+        }else{
         acumulado+=parseInt(cifra);
         document.getElementById("display").value=acumulado; 
+        }
         cifra="";  
         sumar=true;
+        restar=false;
     }
     function resta(){
         if(sumar){
@@ -68,7 +74,7 @@ table{
       }
 
       acumulado= parseInt(document.getElementById("display").value)
-      cifra= 0;
+      cifra=  0;
     }
     
 </script>
