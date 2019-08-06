@@ -33,6 +33,7 @@ table{
     var cifra="";
     var acumulado = 0; 
     var sumar = false;
+    var p_operacion=true;
     var restar = false;
 
     function display_num(numero){
@@ -54,12 +55,17 @@ table{
         restar=false;
     }
     function resta(){
+        if(p_operacion==false){        
         if(sumar){
           acumulado+=parseInt(cifra);
           document.getElementById("display").value=acumulado;   
         }else {
          acumulado-=parseInt(cifra);
          document.getElementById("display").value=acumulado; 
+        }
+        }else{
+          acumulado=parseInt(cifra)
+          p_operacion=false;
         }
         cifra="";  
         sumar=false;
