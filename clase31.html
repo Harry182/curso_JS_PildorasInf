@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- <script>
+        //loop automatico
+        $(document).ready(function(){
+            $("#container img").hide();
+        });
+    </script> -->
+
+    <!-- Funciones encadenadas usando la libreria JQuery-->
+
+
+    <style>
+        #anuncio {
+            background-color: palevioletred;
+            color: aliceblue;
+            font-size: 32px; 
+        }
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+    </style>
+    
+    <script>
+            //loop automatico
+            $(document).ready(function(){
+                $("#anuncio").width(500).height(500).text("!VENDE¡").hide().fadeIn(1000);
+            });
+        </script>
+
+</head>
+<body>
+    <!-- <div id="container">
+        <img src="images/1.jpg" width="250px" height="175px" alt="">
+        &nbsp;
+        <img src="images/2.jpg" width="250px" height="175px" alt="">
+        &nbsp;
+        <img src="images/3.jpg" width="250px" height="175px" alt="">
+        &nbsp;
+        <img src="images/4.jpg" width="250px" height="175px" alt="">
+    </div> -->
+
+    <div id="anuncio">
+        !COMPRA¡
+    </div>
+
+    <p>
+            Explicamos en esta clase dos características importantes de la librería JQuery. Loops automáticos y funcions encadenadas (chained functions).
+    </p>
+
+    <!-- <script>
+            /*seleccionar etiquetas descendientes*/
+            var imagenes=document.querySelectorAll("#container img");
+    
+            for(var i=0;i<imagenes.length;i++){
+                imagenes[i].style.visibility="hidden";
+            }
+        </script> -->
+<!-- 
+        <script>
+            var anuncio=document.getElementById("anuncio");
+            anuncio.style.width="500px";
+            anuncio.style.height="500px";
+            anuncio.innerHTML="!VENDER¡";
+        </script> -->
+
+        
+
+    
+</body>
+</html>
