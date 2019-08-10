@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+        .micontenedor {
+            background-color: palevioletred;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 32px;
+        }
+    </style>
+    
+    <script >
+        $(document).ready(function(){
+            //alert($("#error").html()); // html(); esta funcion permite manipular etiquetas HTML   
+            //$("#error").html("<p>Texto que reemplazó<p/>");  //de esta forma sustituimos el texto dentro de HTML
+            //$("#error").append("<p>Texto que agregado con append<p/>"); //la funcion append agregar texto + lo que ya esta
+            //$("#error").prepend("<p>Texto agregado con prepend<p/>"); //la funcion prepend agregar texto antes de lo que ya esta
+            //$("#error").before("<p>Texto agregado con before<p/>"); //la funcion before agregar texto antes del contenedor
+            //$("#error").after("<p>Texto agregado con after<p/>"); //la funcion after agregar texto despues del contenedor
+            $("#error h2").text("Error en el texto!"); //la funcion text no manipula las etiquetas de HTML
+                
+        });
+
+    </script> 
+</head>
+<body>
+    <div class="contenedor">
+        <div id="error" class="micontenedor">
+            <h2>Error!</h2>
+        </div>
+    </div>
+
+    <p>
+            En esta clase vemos cómo agregar contenido utilizando funciones de la librería JQuery.
+    </p>
+    
+</body>
+</html> 
