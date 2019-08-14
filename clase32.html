@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #banner {
+            background-color: palevioletred;
+            width: 450px;
+            height: 300px;
+            position: absolute;
+            left: 400px;
+            top: 50px;
+            font-size: 36px;
+            text-align: center;  
+        }
+        img {
+            float: left;
+            margin: 15px;            
+        }
+        #sustitucion {
+            float: left;
+            margin: 15px;
+            width: 250px;
+            height: 175px;
+            font-size: 32px;
+            color: rgb(190, 21, 58);
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         /*    var z=document.getElementById("cerrar");
+            z.addEventListener("click",cerrar_banner,false); */
+            document.getElementById("cerrar").addEventListener("click",cerrar_banner,false);
+            document.getElementById("img1").addEventListener("click",agregar_carrito,false);
+        });
+        
+        function cerrar_banner(){
+            $("#banner").remove();
+        }
+        function agregar_carrito(){
+            $("#img1").replaceWith("<div id='sustitucion'>Articulo Agregado</div>")
+        }
+    </script>
+</head>
+<body>
+        <div id="banner">
+            Banner de prueba
+            <p id="cerrar">cerrar</p>
+        </div>
+         <div id="container">
+        <img src="images/1.jpg" width="250px" height="175px" alt="" id="img1">
+        &nbsp;
+        <img src="images/2.jpg" width="250px" height="175px" alt="">
+        &nbsp;
+        <img src="images/3.jpg" width="250px" height="175px" alt="">
+        &nbsp;
+        <img src="images/4.jpg" width="250px" height="175px" alt="">
+    </div>
+     
+</body>
+</html>
