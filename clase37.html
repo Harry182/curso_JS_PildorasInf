@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Noti-Peluche</title>
+    <style>
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+        }
+        div {
+            width:20%;
+            margin: 0 80px;
+            float: left;
+            border: #333 solid 2px;
+            padding: 10px;
+
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            // document.getElementById("aumenta1").addEventListener("click",aumentarText,false);
+            // document.getElementById("disminuye1").addEventListener("click",disminuirText,false);
+            // document.getElementById("aumenta2").addEventListener("click",aumentarText,false);
+            // document.getElementById("disminuye2").addEventListener("click",disminuirText,false);
+            // document.getElementById("aumenta3").addEventListener("click",aumentarText,false);
+            // document.getElementById("disminuye3").addEventListener("click",disminuirText,false);
+
+            var botones=document.querySelectorAll("input");
+            
+            var length=botones.length;
+
+            for(var i=0;length;i++){
+                botones[i].addEventListener("click",aumentarText,false);
+                botones[i].addEventListener("click",disminuirText,false);
+            }
+
+        })
+
+        function aumentarText(e) {
+            var zonaActuacion;
+            if(e.target===aumenta1){
+                zonaActuacion="#noticia1";
+            }else if(e.target===aumenta2) {
+                zonaActuacion="#noticia2";
+            }else if(e.target===aumenta3){
+                zonaActuacion="#noticia3"
+            }
+            var tamanioTextoNormal=$(zonaActuacion).css("font-size");
+            tamanioTextoNormal=parseInt(tamanioTextoNormal);
+            $(zonaActuacion).css("font-size",tamanioTextoNormal*1.08);
+        }
+        function disminuirText(e){
+            var zonaActuacion;
+            if(e.target===disminuye1){
+                zonaActuacion="#noticia1";
+            }else if(e.target===disminuye2){
+                zonaActuacion="#noticia2";
+            }else if(e.target===disminuye3){
+                zonaActuacion="#noticia3"
+            }
+            var tamanioTextoNormal=$(zonaActuacion).css("font-size");
+            tamanioTextoNormal=parseInt(tamanioTextoNormal);
+            $(zonaActuacion).css("font-size",tamanioTextoNormal*0.95);
+        }
+    </script>
+</head>
+<body>
+    <!-- En esta clase vemos el uso de la función css() de la librería JQuery. Esta función nos permite modificar propiedades css desde JavaScript -->
+    <h1>Noti-Peluche</h1>
+    <div id="noticia1">
+           <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec sollicitudin est, iaculis egestas lectus. Proin ut malesuada tortor, sit amet placerat neque. Phasellus lobortis porttitor velit, ut ultrices est placerat ac. Suspendisse mollis varius libero vel aliquam. Morbi vulputate risus sit amet felis varius tincidunt. Quisque quis felis auctor, lobortis diam quis, fermentum libero. Aenean dui enim, dignissim rhoncus ante eu, sollicitudin posuere magna. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Nullam pulvinar, arcu in ultricies tincidunt, risus sapien ullamcorper eros, at interdum ante mauris sed sapien.
+        </p>
+            <table><tr><td style="text-align:left"><input type="button" value="aumentar" id="aumenta1"></td>
+                        <td style="text-align: right"><input type="button" value="disminuir" id="disminuye1"></td></tr></table>
+    </div>
+    <div id="noticia2">
+        <p>
+
+            Aenean ac lacus a arcu commodo vulputate non vitae eros. In hac habitasse platea dictumst. Nulla varius, augue eu aliquam mollis, sem erat ultrices massa, at dignissim neque ante quis ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum tempor, dolor eu sodales lobortis, arcu lorem interdum justo, eget tempor libero ipsum vitae eros. Nunc libero dui, dapibus id nisi nec, eleifend egestas ex. Nunc risus sapien, faucibus sit amet varius vitae, gravida in sem. Duis ante erat, sodales eu posuere id, luctus a nulla. Quisque sed dui porttitor, mollis lectus vel, aliquam nisi. Mauris et ornare lorem.
+        </p>
+            <table><tr><td style="text-align: left"><input type="button" value="aumentar" id="aumenta2"></td>
+                <td style="text-align: right"><input type="button" value="disminuir" id="disminuye2"></td></tr></table>
+    </div>
+    <div id="noticia3">
+        <p>
+
+            Nullam augue ex, bibendum sed fringilla in, iaculis in orci. Maecenas molestie nisi lorem, efficitur tincidunt ex varius in. Nullam odio nisi, congue at finibus eget, mollis ut nulla. Praesent tempus orci ut ultrices ullamcorper. In hac habitasse platea dictumst. Vivamus dictum in orci et mollis. Sed posuere tincidunt velit. Aliquam congue malesuada est, in feugiat mauris fermentum quis. In at ligula at orci iaculis placerat quis a risus.
+        </p>
+            <table><tr><td style="text-align: left"><input type="button" value="aumentar" id="aumenta3"></td>
+                <td style="text-align:right"><input type="button" value="disminuir" id="disminuye3"></td></tr></table>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        .linkInformacion {
+            background-color: palevioletred;
+            color: aliceblue;
+            text-align: center;
+            font-weight: 400;
+
+        }
+        .linkDestacados{ 
+            background-color: rgb(16, 132, 199);
+            color: aliceblue;
+            text-align: center;
+            font-weight: bold;
+        }
+        a {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        table {
+            text-align: center;
+            border: none;
+        }
+        td {
+            border: none;
+        }
+        #contieneEnlaces {
+            position: absolute;
+            left: 31px;
+            top: 65px;
+            width: 400px;
+            height:   649px;
+            z-index: 1;
+            padding-bottom: 100px;
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //$("a[href^='http://']").addClass("linkDestacados");
+            document.getElementById("cursos").addEventListener("click",resaltaCursos, false);
+            document.getElementById("informacion").addEventListener("click",resaltaEjemplos,false);
+        });
+
+        function resaltaCursos(){
+            //$(".cursos").toggleClass("linkDestacados");   //toggleClass() tiene la funcionde on/off
+            $(".ejemplos").removeClass("linkDestacados");
+            $(".cursos").addClass("linkDestacados");
+        }
+
+        function resaltaEjemplos(){
+           $(".ejemplos").addClass("linkDestacados");
+           $(".cursos").removeClass("linkDestacados");
+           //$(".ejemplos").toggleClass("linkInformacion");
+        }
+
+    </script>
+    
+</head>
+<body>
+    <!-- En esta clase vemos como cambiar atributos CSS dinamicamente con la libreria jQuery
+        usando la funcion toogleClass()  que tiene la funcion de on/off-->
+
+    <div id="contieneEnlaces">
+        <a href="http://www.pildorasinformaticas.com" target="_blank" class="cursos">
+        Pildoras Informáticas</a><br>
+
+        <a href="http://www.google.com" target="_blank" class="ejemplos">
+        Buscar con Google</a><br>
+        
+        <a href="https://www.youtube.com/user/pildorasinformaticas" target="_blank" class="cursos">
+        Pildoras Informáticas Youtube</a><br>    
+
+        <a href="https://news.google.es" target="_blank" class="ejemplos">
+        Pildoras Informaticas</a><br>
+
+        <a href="clase25.html" target="_blank">
+            Calculadora Arcaica</a><br>
+    </div>
+    <table width="100%" border="1">
+        <tr>
+            <td>Cursos destacados&nbsp;&nbsp;<input type="radio" name="misbotones" value="Cursos" id="cursos"></td>
+            <td>Informacion adicional&nbsp;&nbsp;<input type="radio" name="misbotones" value="Información" id="informacion"></td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>
