@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 40</title>
+    <style>
+        img {
+            width: 443px;
+            height: 297px;
+        }
+        #contenedor1 {
+            position: absolute;
+            left: 67px;
+            border: 1px solid palevioletred;
+            top: 177px;
+            width: 408px;
+            height: 298px;
+            z-index: 1;
+        }
+        #contenedor2 {
+            position: absolute;
+            border: 1px solid palevioletred;
+            left: 510px;
+            top: 176px;
+            width: 443px;
+            height: 297px;
+            z-index: 2;
+
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 24px;
+            width: 95px;    
+        }
+        .destacar {
+            background-color: darkgoldenrod;
+            width: 95px;
+        }
+    </style>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var elementos = document.querySelectorAll("li");
+            tamArray=elementos.length;                
+            for(var i= 0; tamArray;i++){
+                elementos[i].addEventListener("mouseover",agrega_img,false);
+                elementos[i].addEventListener("mouseout",quita_img,false);
+            }
+        });
+
+        function agrega_img(e){
+            if(e.target === elem1){
+                $("#elem1").addClass("destacar");
+                $("img").attr("src","./images/1.jpg");
+            }else if(e.target === elem2) {
+                $("#elem2").addClass("destacar");
+                $("img").attr("src","./images/2.jpg");
+            }else if(e.target === elem3){
+                $("#elem3").addClass("destacar");
+                $("img").attr("src","./images/3.jpg");
+            }else if(e.target === elem4){
+                $("#elem4").addClass("destacar");
+                $("img").attr("src","./images/4.jpg");
+            }
+        }
+
+        function quita_img(e){
+            if(e.target === elem1){
+                $("#elem1").removeClass("destacar");
+                $("img").removeAttr("src","./images/1.jpg");
+            }else if(e.target === elem2){
+                $("#elem2").removeClass("destacar");
+                $("img").removeAttr("src","./images/2.jpg");
+            }else if(e.target === elem3){
+                $("#elem3").removeClass("destacar");
+                $("img").removeAttr("src","./images/3.jpg");
+            }else if(e.target === elem4){
+                $("#elem4").removeClass("destacar");
+                $("img").removeAttr("src","./images/4.jpg");
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    <!-- En esta clase vemos un ejemplo sencillo donde utilizar las funciones JQuery ya vistas 
+        anteriormente de addClass, removeClass y Attr, pero también vemos la función nueva removeAttr. -->
+    <div id="contenedor1">
+        <ul>
+            <li id="elem1">Imagen 1</li>
+            <li id="elem2">Imagen 2</li>
+            <li id="elem3">Imagen 3</li>
+            <li id="elem4">Imagen 4</li>
+        </ul>
+    </div>
+    <div id="contenedor2">
+        <img src="" alt="">
+    </div>
+    
+</body>
+</html>
