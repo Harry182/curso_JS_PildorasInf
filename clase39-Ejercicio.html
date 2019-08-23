@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio galeria de imagenes</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            border: none;
+            text-align: center;
+
+        }
+        img {
+            width: 300px;
+            height: 200px;
+            padding: 0 5px; 
+            opacity: 0.5;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var elementos = document.querySelectorAll("img");
+
+            for(var i= 0;i<elementos.length;i++){
+                elementos[i].addEventListener("mouseover",cambiar_img,false);
+            }
+        })
+
+        function cambiar_img(e){
+            if(e.target===img1){
+                $("#img1").attr("src","./images/1.jpg"); 
+                $("#img1").css({"opacity":"1"});
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Galeria de Imagenes</h2>
+    <table width="100%" border="0" >
+        <tr>
+            <td><img src="./images/1.jpg" alt="" id="img1"></td>
+            <td><img src="./images/2.jpg" alt="" id="img2"></td>
+            <td><img src="./images/3.jpg" alt="" id="img3"></td>
+            <td><img src="./images/4.jpg" alt="" id="img4"></td>
+        </tr>
+    </table>
+</body>
+</html>

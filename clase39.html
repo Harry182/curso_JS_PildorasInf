@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            document.getElementById("img1").addEventListener("mouseover",cambiar_img,false);
+            document.getElementById("img1").addEventListener("mouseout",restaurar_img,false);
+            
+        });
+        
+        function cambiar_img(){
+            $("img").attr("src","./images/2.jpg")
+        }
+
+        function restaurar_img(){
+            $("img").attr("src","./images/1.jpg")
+        }
+    </script>
+</head>
+<body>
+    <!-- En esta clase vemos la función attr de la librería JQuery que nos permite modificar dinámicamente atributos de etiquetas HTML. -->
+
+    <div class="">
+        <img src="./images/1.jpg" alt="" id="img1">
+    </div>
+    
+</body>
+</html>
